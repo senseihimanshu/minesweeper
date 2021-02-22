@@ -5,18 +5,21 @@ import Block from './Block';
 
 function Board({ board, bombsCount, size }){
     const [isEnded, setIsEnded] = React.useState(false);
-    console.log(board, bombsCount);
     var correctClicked = 0;
     var winner = false;
 
+    console.log(board);
+
     function checkIsEnded(row, col){
+        console.log(correctClicked, size*size - bombsCount);
         board[row][col] === -1 && setIsEnded(true);
-        if(correctClicked === size*size - bombsCount) {
-            setIsEnded(true);
+        if(correctClicked+1 === size*size - bombsCount) {
             winner = true;
+            setIsEnded(true);
         }
         
         correctClicked++;
+        return isEnded;
     }
 
     const boardUi = board.map((row, rIdx) => {

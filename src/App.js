@@ -51,7 +51,7 @@ function createMatrix(size){
 }
 
 function App() {
-  var size = 10;
+  var size = 5;
   const { board, bombsCount } = createMatrix(size);
   console.log(board);
   return (
