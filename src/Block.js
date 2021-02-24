@@ -12,7 +12,7 @@ function Block({ value, checkIsEnded, rowIdx, colIdx, isEnded }){
     }
 
     return(
-        <div className="Block" onClick={!isClicked && !checkIsEnded() ? handleClick : undefined}>
+        <div className="Block" onClick={!isClicked && !isEnded ? handleClick : undefined}>
             { isClicked ? value : '' }
         </div>
     );
